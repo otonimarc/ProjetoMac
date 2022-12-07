@@ -13,6 +13,7 @@ namespace ProjetoMac.Controllers
         }
         public IActionResult Demo()
         {
+            TempData["Nome"] = "Marcoratti";
             return View();
         }
 

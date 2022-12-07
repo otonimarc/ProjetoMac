@@ -20,7 +20,7 @@ namespace ProjetoMac.Models
         public string DescricaoCurta { get; set; }
         [Required(ErrorMessage = "A descrição do lanche deve ser informada")]
         [Display(Name = "Descrição do lanche")]
-        [MinLength(20, ErrorMessage = "A descrição deve ter no mínimo {1} caracteres")]
+        [MinLength(20, ErrorMessage = "A descrição deve ter no mínimo {1} caracteres" )]
         [MaxLength(200, ErrorMessage = "A descrição deve ter no maximo {1}")]
         public string DescricaoDetalhada { get; set; }
         [Required(ErrorMessage = "Informe o preço do lanche")]
@@ -39,7 +39,6 @@ namespace ProjetoMac.Models
         public bool IsLanchePreferido { get; set; }
         [Display(Name = "Estoque")]
         public bool EmEstoque { get; set; }
-
         public int CategoriaId { get; set; }
         public virtual Categoria Categoria { get; set; }
 

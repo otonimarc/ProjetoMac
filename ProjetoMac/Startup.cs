@@ -1,5 +1,7 @@
 ﻿using ProjetoMac.Context;
 using Microsoft.EntityFrameworkCore;
+using ProjetoMac.Repositories;
+using ProjetoMac.Repositories.Interfaces;
 
 namespace ProjetoMac;
 public class Startup
@@ -14,6 +16,8 @@ public class Startup
     {
         services.AddDbContext<AppDbContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+        services.AddTransient<ILancheRepository, LancheRepository>();
+        services.AddTransient<ICategoriaRepository, CategoriaRepository>();
         services.AddControllersWithViews();
     }
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -40,3 +44,4 @@ public class Startup
        });
     }
  }
+
