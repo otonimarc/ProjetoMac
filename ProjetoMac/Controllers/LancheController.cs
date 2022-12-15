@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProjetoMac.Repositories.Interfaces;
+using ProjetoMac.ViewModels;
 
 namespace ProjetoMac.Controllers
 {
@@ -13,16 +14,10 @@ namespace ProjetoMac.Controllers
         }
         public IActionResult List()
         {
-            ViewData["Titulo"] = "Todos os lanches";
-            ViewData["Data"] = DateTime.Now;
-            var lanches = _lancheRepository.Lanches;
-            var totalLanches = lanches.Count();
-
-            ViewBag.Total = "Total de lanches";
-            ViewBag.TotalLanches = totalLanches;
-            return View(lanches);
-
-            
+            var lanchesListViewModel = new LanchesListViewModel();
+           lanchesListViewModel.Lanches = _lancheRepository.Lanches;
+           lanchesListViewModel.CategoriaAtual = "Categoria Atual";
+           return View(lanchesListViewModel);
         }
     }
 }
