@@ -1,19 +1,31 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProjetoMac.Models;
 using System.Diagnostics;
+using ProjetoMac.Repositories.Interfaces;
+using ProjetoMac.ViewModels;
 
 namespace ProjetoMac.Controllers
 {
     public class HomeController : Controller
     {
-       
+        private readonly ILancheRepository _lancheRepository;
+
+        public HomeController(ILancheRepository lancheRepository)
+        {
+            _lancheRepository = lancheRepository;
+        }
         public IActionResult Index()
         {
-            return View();
+            var homeViewModel = new HomeViewModel
+            {
+                LanchesPreferidos = _lancheRepository.LanchesPreferidos
+            };
+
+            return View(homeViewModel);
         }
         public IActionResult Demo()
         {
-            TempData["Nome"] = "Marcoratti";
+            TempData["Nome"] = "Marcelo";
             return View();
         }
 

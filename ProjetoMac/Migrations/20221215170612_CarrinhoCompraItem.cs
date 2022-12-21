@@ -4,10 +4,8 @@
 
 namespace ProjetoMac.Migrations
 {
-    /// <inheritdoc />
     public partial class CarrinhoCompraItem : Migration
     {
-        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -35,8 +33,6 @@ namespace ProjetoMac.Migrations
                 table: "CarrinhoCompraItem",
                 column: "LancheId");
         }
-
-        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

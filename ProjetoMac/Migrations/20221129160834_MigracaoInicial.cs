@@ -4,10 +4,10 @@
 
 namespace ProjetoMac.Migrations
 {
-    /// <inheritdoc />
+ 
     public partial class MigracaoInicial : Migration
     {
-        /// <inheritdoc />
+  
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -57,7 +57,6 @@ namespace ProjetoMac.Migrations
                 column: "CategoriaId");
         }
 
-        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

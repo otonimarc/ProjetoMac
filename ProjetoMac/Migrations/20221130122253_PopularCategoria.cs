@@ -4,10 +4,9 @@
 
 namespace ProjetoMac.Migrations
 {
-    /// <inheritdoc />
+    
     public partial class PopularCategoria : Migration
     {
-        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.Sql("INSERT INTO Categoria(CategoriaNome, Descricao)" +
@@ -15,8 +14,6 @@ namespace ProjetoMac.Migrations
             migrationBuilder.Sql("INSERT INTO Categoria(CategoriaNome, Descricao)" +
                                  "VALUES('Natural', 'Lanche feito com ingredientes naturais')");
         }
-
-        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.Sql("DELETE FROM Categoria");
