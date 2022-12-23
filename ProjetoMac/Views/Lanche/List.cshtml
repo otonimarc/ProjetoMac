@@ -1,4 +1,4 @@
-﻿@model LanchesListViewModel
+﻿@model LancheListViewModel
 
 <div>
     <h2>@Model.CategoriaAtual</h2>
@@ -6,9 +6,9 @@
 
 <div class="container">
     <div class="row">
-    @foreach (var lanche in Model.Lanches)
+    @foreach (var Lanche in Model.Lanches)
     {
-        <partial name="_lanchesResumo" for="@lanche"/>
+        <partial name="_LanchesResumo" for="@Lanche"/>
     }
 </div>
 </div>
