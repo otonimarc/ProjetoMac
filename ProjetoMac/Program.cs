@@ -1,6 +1,6 @@
 using ProjetoMac;
 
-namespace LanchesMac;
+namespace ProjetoMac;
 public class Program
 {
     public static void Main(string[] args)

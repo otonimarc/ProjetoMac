@@ -18,6 +18,7 @@ public class Startup
         services.AddDbContext<AppDbContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
         services.AddTransient<ILancheRepository, LancheRepository>();
+        services.AddTransient<IPedidoRepository, PedidoRepository>();
         services.AddTransient<ICategoriaRepository, CategoriaRepository>();
         services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         services.AddControllersWithViews();
