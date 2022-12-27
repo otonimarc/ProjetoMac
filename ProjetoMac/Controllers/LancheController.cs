@@ -26,19 +26,6 @@ namespace ProjetoMac.Controllers
             }
             else
             {
-                //if (string.Equals("Normal", categoria, StringComparison.OrdinalIgnoreCase))
-                //{
-                //    lanches = _lancheRepository.Lanches
-                //        .Where(l =>   l.Categoria.CategoriaNome == "Normal")
-                //        .OrderBy(l => l.Nome);
-                //}
-                //else
-                //{
-                //    lanches = _lancheRepository.Lanches
-                //        .Where(l =>  l.Categoria.CategoriaNome == "Natural")
-                //        .OrderBy(l => l.Nome);
-                //}
-
                 lanches = _lancheRepository.Lanches
                     .Where(l => l.Categoria.CategoriaNome == categoria)
                     .OrderBy(c => c.Nome);
@@ -79,9 +66,8 @@ namespace ProjetoMac.Controllers
                     categoriaAtual = "Lanches";
                 else
                     categoriaAtual = "Nenhum lanche foi encontrado";
-            }
-             return View("~/Views/Lanche/List.cshtml", new LancheListViewModel
-             {
+            } return View("~/Views/Lanche/List.cshtml", new LancheListViewModel
+            {
                  Lanches = lanches,
                  CategoriaAtual = categoriaAtual
              });

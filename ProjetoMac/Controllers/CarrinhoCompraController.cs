@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ProjetoMac.Models;
 using ProjetoMac.Repositories.Interfaces;
 using ProjetoMac.ViewModels;
@@ -29,6 +30,7 @@ namespace ProjetoMac.Controllers
             return View(carrinhoCompraVM);
         }
 
+        [Authorize]
         public RedirectToActionResult AdicionarItemNoCarrinhoCompra(int lancheId)
         {
             var lancheSelecionado = _lancheRepository.Lanches.FirstOrDefault(p => p.LancheId == lancheId);
@@ -40,6 +42,7 @@ namespace ProjetoMac.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         public IActionResult RemoverItemDoCarrinho(int lancheId)
         {
             var lancheSelecionado = _lancheRepository.Lanches.FirstOrDefault(p => p.LancheId == lancheId);
