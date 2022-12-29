@@ -15,14 +15,7 @@ namespace ProjetoMac.Controllers
             _carrinhoCompra = carrinhoCompra;
         }
 
-        [Authorize]
-        [HttpPost]
-        public IActionResult Checkout()
-        {
-            return View();
-        }
-        [Authorize]
-        [HttpPost]
+      
         public IActionResult Checkout(Pedido pedido)
         {
             int totalItensPedido = 0;
@@ -56,7 +49,7 @@ namespace ProjetoMac.Controllers
                 _pedidoRepository.CriarPedido(pedido);
 
                 //define mensagens ao cliente
-                ViewBag.CheckoutCompletoMensagem = "Obrigado pelo seu pedido :)";
+                ViewBag.CheckoutCompletoMensagem = "Obrigado pelo seu pedido:";
                 ViewBag.TotalPedido = _carrinhoCompra.GetCarrinhoCompraTotal();
 
                 //limpa o carrinho do cliente

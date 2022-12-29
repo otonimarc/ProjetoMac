@@ -6,7 +6,7 @@ namespace ProjetoMac.Areas.Admin.Controllers
     public class AdminController : Controller
     {
         [Area("Admin")]
-        [Authorize]
+        [Authorize(Roles ="Admin")]
         public IActionResult Index()
         {
             return View();

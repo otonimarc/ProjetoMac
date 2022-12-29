@@ -1,7 +1,7 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using ProjetoMac.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using ProjetoMac.ViewModels;
 
 namespace ProjetoMac.Controllers
 {
@@ -52,8 +52,7 @@ namespace ProjetoMac.Controllers
             }
             ModelState.AddModelError("", "Falha ao realizar o login!!");
             return View(loginVM);
-        }
-
+        }//
 
         [AllowAnonymous]
         public IActionResult Register()
@@ -74,7 +73,7 @@ namespace ProjetoMac.Controllers
                 if (result.Succeeded)
                 {
                     //await _signInManager.SignInAsync(user, isPersistent: false);
-                    //await _userManager.AddToRoleAsync(user, "Member");
+                    await _userManager.AddToRoleAsync(user, "Member");
                     return RedirectToAction("Login", "Account");
                 }
                 else

@@ -1,6 +1,7 @@
-﻿namespace ProjetoMac.Services
+﻿namespace ProjetoMac.Services;
+
+public interface ISeedUserRoleInitial
 {
-    public class ISeedRoleUserInitial
-    {
-    }
+    void SeedRoles();
+    void SeedUsers();
 }
